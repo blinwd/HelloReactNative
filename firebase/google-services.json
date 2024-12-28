@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "413127099484",
+    "project_id": "helloreactnative-200b2",
+    "storage_bucket": "helloreactnative-200b2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:413127099484:android:0af6aef8bed199683b9299",
+        "android_client_info": {
+          "package_name": "com.blinswd.HelloReactNative"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "413127099484-67mj8a1k8d408g3m3v24c3iov5sfiup2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_w7CRtMHg54Fbc_PMO1_w5EhMuXkLfKk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "413127099484-67mj8a1k8d408g3m3v24c3iov5sfiup2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "413127099484-un26a9d3iqm40usuriccp43gcg4ad9m2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.blinswd.HelloReactNative"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
