@@ -1,5 +1,5 @@
 import { Redirect, Tabs } from 'expo-router';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Platform } from 'react-native';
 
 import { HapticTab } from '@/components/HapticTab';
@@ -33,7 +33,7 @@ export default function TabLayout() {
           ios: {
             // Use a transparent background on iOS to show the blur effect
             position: 'absolute',
-            height: 48,
+            height: 72,
           },
           web: {
             display: 'none',

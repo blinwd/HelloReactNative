@@ -4,7 +4,6 @@ import {
   Platform,
   TouchableOpacity,
   Text,
-  SafeAreaView,
 } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
@@ -14,13 +13,15 @@ import { ThemedView } from '@/components/ThemedView';
 
 import { useAppContext } from '@/contexts/AppContext';
 import { useAuthContext } from '@/contexts/AuthContext';
+import PageView from '@/components/PageView';
+import TopNavBar from '@/templates/TopNavBar';
 
 export default function HomeScreen() {
   const { isAuthenticated } = useAppContext();
   const { signOut } = useAuthContext();
 
   return (
-    <SafeAreaView className="h-full">
+    <PageView topNavBar={<TopNavBar />}>
       <ParallaxScrollView
         headerBackgroundColor={{
           light: '#A1CEDC',
@@ -110,7 +111,7 @@ export default function HomeScreen() {
           </ThemedView>
         )}
       </ParallaxScrollView>
-    </SafeAreaView>
+    </PageView>
   );
 }
 
