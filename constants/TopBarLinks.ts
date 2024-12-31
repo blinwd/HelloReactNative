@@ -10,4 +10,8 @@ export const TopBarLinks: { href: Href; label: string }[] =
       href: '/explore',
       label: 'Explore',
     },
+    {
+      href: '/chat',
+      label: 'Chat',
+    },
   ];

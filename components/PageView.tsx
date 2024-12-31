@@ -20,9 +20,9 @@ const PageView = ({
   ...otherProps
 }: PageViewProps) => {
   return (
-    <SafeAreaView className="w-full h-full">
+    <SafeAreaView className="flex-1">
       <View
-        className={`w-full flex-1 ${className}`}
+        className={`flex-1 ${className}`}
         {...otherProps}
       >
         {Platform.OS === 'web' ? topNavBar : null}
