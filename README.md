@@ -4,6 +4,14 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 <img width="1496" alt="Screenshot 2024-12-27 at 2 41 51 PM" src="https://github.com/user-attachments/assets/4079d907-41da-43c5-b94a-f629e81425f4" />
 
 
+## Branches
+
+Use any of the following branches to start up the app:
+
+- **main**: The hello world setup showcasing the base Expo configuration.
+- **firebase**: Contains features and configurations specific to Firebase authentication.
+- **stream-chat**: Contains features and configurations specific to Stream Chat integration.
+
 ## Running the App
 ### Web
 Start the app in a web browser:
