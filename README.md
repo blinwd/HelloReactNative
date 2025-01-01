@@ -7,9 +7,9 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 
 ## Branches
 
-Use any of the following branches to start up the app:
+Use `main` branch for all the features. Alternatively, use any of the following branches to start up the app:
 
-- **main**: The hello world setup showcasing the base Expo configuration.
+- **hello-world**: The hello world setup showcasing the base Expo configuration.
 - **firebase**: Contains features and configurations specific to Firebase authentication.
 - **stream-chat**: Contains features and configurations specific to Stream Chat integration.
 
