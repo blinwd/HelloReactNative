@@ -28,10 +28,6 @@ const StreamChatWrapper = ({
     tokenOrProvider: chatUserToken,
   });
 
-  useEffect(() => {
-    console.log('>> StreamChatWrapper is rendered');
-  }, []);
-
   if (!client) {
     return (
       <SafeAreaView className="bg-primary h-full">
