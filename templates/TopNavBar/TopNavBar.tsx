@@ -5,7 +5,6 @@ import {
   Image,
   Dimensions,
   Text,
-  Platform,
 } from 'react-native';
 import type { ImageStyle } from 'react-native';
 import { useCallback, useEffect, useState } from 'react';
@@ -40,12 +39,12 @@ const TopNavBar = ({
         {isPanelOpen && (
           <View className="w-full items-end mb-8">
             <TouchableOpacity
-              className="px-4 py-2 rounded-full transition-colors hover:bg-slate-200"
+              className="px-4 py-2 rounded-full transition-colors hover:bg-slate-100 dark:hover:bg-transparent"
               onPress={() => setIsPanelOpen(false)}
             >
-              <ThemedText className="text-purple-800">
+              <Text className="text-black dark:text-white hover:dark:text-gray-600">
                 Close
-              </ThemedText>
+              </Text>
             </TouchableOpacity>
           </View>
         )}
@@ -63,7 +62,11 @@ const TopNavBar = ({
               className={`px-4 py-2 rounded-full transition-colors ${
                 pathname === link.href
                   ? `${isPanelOpen ? '' : 'bg-purple-800'}`
-                  : 'hover:bg-slate-200'
+                  : `${
+                      isPanelOpen
+                        ? 'hover:bg-slate-100 dark:hover:bg-transparent'
+                        : 'hover:bg-slate-100 dark:hover:bg-transparent'
+                    }`
               }`}
               onPress={() => {
                 setIsPanelOpen(false);
@@ -76,7 +79,7 @@ const TopNavBar = ({
                     ? isPanelOpen
                       ? `text-purple-800`
                       : 'text-white'
-                    : ''
+                    : 'dark:text-white hover:dark:text-gray-600'
                 }
                 style={{
                   fontWeight:
@@ -98,7 +101,9 @@ const TopNavBar = ({
         {isAuthenticated ? (
           <View
             className={
-              isPanelOpen ? 'flex-col gap-2' : 'flex-row'
+              isPanelOpen
+                ? 'flex-col items-start gap-2'
+                : 'flex-row items-center justify-center'
             }
           >
             <Text
@@ -112,24 +117,32 @@ const TopNavBar = ({
             <TouchableOpacity
               className={
                 isPanelOpen
-                  ? 'px-4 py-2 rounded-full hover:bg-slate-200'
-                  : ''
+                  ? 'px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-transparent'
+                  : 'px-4 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-transparent'
               }
               onPress={() => signOut()}
             >
-              <Text>Log out</Text>
+              <Text
+                className={
+                  isPanelOpen
+                    ? 'dark:text-white hover:dark:text-gray-600'
+                    : 'dark:text-white hover:dark:text-gray-600'
+                }
+              >
+                Log out
+              </Text>
             </TouchableOpacity>
           </View>
         ) : (
           <Link
             className={`${
               isPanelOpen
-                ? 'px-4 py-2 rounded-full hover:bg-slate-200'
+                ? 'px-4 py-2 rounded-full hover:bg-slate-100'
                 : ''
             }`}
             href="/sign-in"
           >
-            <ThemedText>Log In</ThemedText>
+            <Text className="dark:text-black">Log In</Text>
           </Link>
         )}
       </>
@@ -151,7 +164,7 @@ const TopNavBar = ({
 
   return (
     <View
-      className={`flex-row items-center justify-between p-4 gap-4 z-auto bg-white ${className}`}
+      className={`flex-row items-center justify-between p-4 gap-4 z-auto bg-white dark:bg-black ${className}`}
     >
       {/* Logo */}
       <Image
@@ -180,7 +193,7 @@ const TopNavBar = ({
           />
 
           {/* Mobile Panel Content */}
-          <View className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm items-start">
+          <View className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-black px-6 py-6 sm:max-w-sm items-start">
             {renderContent()}
           </View>
         </>

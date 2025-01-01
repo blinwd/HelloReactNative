@@ -11,6 +11,14 @@ module.exports = {
   ],
   presets: [require('nativewind/preset')],
   darkMode: 'class',
-  theme: {},
+  theme: {
+    extend: {
+      colors: {
+        purple: {
+          900: '#541785',
+        },
+      },
+    },
+  },
   plugins: [],
 };
