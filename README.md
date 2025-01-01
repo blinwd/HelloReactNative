@@ -3,6 +3,7 @@
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app). It includes a minimal implementation covering basic theming using NativeWind, authentication via Firebase, and chat functionality with Stream Chat.
 <img width="1496" alt="Screenshot 2024-12-27 at 2 41 51 PM" src="https://github.com/user-attachments/assets/4079d907-41da-43c5-b94a-f629e81425f4" />
 
+<img width="1728" alt="Screenshot 2024-12-31 at 5 16 50 PM" src="https://github.com/user-attachments/assets/1576051a-8ed6-496a-bc02-4fa12265cabe" />
 
 ## Branches
 
