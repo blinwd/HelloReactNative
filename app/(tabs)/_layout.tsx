@@ -1,20 +1,31 @@
-import { Tabs } from 'expo-router';
+import { Redirect, Tabs } from 'expo-router';
 import React from 'react';
 import { Platform } from 'react-native';
 
 import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
 import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { useAppContext } from '@/contexts/AppContext';
+import TabIcon from '@/components/TabIcon';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
+  const { isAuthenticated, isReady } = useAppContext();
+
+  if (!isReady) {
+    return null;
+  }
+
+  if (!isAuthenticated) {
+    return <Redirect href="/sign-in" />;
+  }
 
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor:
+          Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
         tabBarButton: HapticTab,
         tabBarBackground: TabBarBackground,
@@ -22,22 +33,42 @@ export default function TabLayout() {
           ios: {
             // Use a transparent background on iOS to show the blur effect
             position: 'absolute',
+            height: 72,
           },
-          default: {},
+          web: {
+            display: 'none',
+          },
         }),
-      }}>
+      }}
+    >
       <Tabs.Screen
-        name="index"
+        name="home"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: '',
+          tabBarIcon: ({ color, size, focused }) => (
+            <TabIcon
+              icon="house.fill"
+              name="Home"
+              size={size}
+              color={color}
+              focused={focused}
+            />
+          ),
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="chat"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: '',
+          tabBarIcon: ({ color, size, focused }) => (
+            <TabIcon
+              icon="message.fill"
+              name="Chat"
+              size={size}
+              color={color}
+              focused={focused}
+            />
+          ),
         }}
       />
     </Tabs>
