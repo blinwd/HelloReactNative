@@ -13,6 +13,11 @@ Use `main` branch for all the features. Alternatively, use any of the following 
 - **firebase**: Contains features and configurations specific to Firebase authentication.
 - **stream-chat**: Contains features and configurations specific to Stream Chat integration.
 
+## Setup
+```bash
+npm install
+```
+
 ## Running the App
 ### Web
 Start the app in a web browser:
