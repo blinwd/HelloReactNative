@@ -3,6 +3,9 @@ import { useEffect } from 'react';
 import { auth } from '@/firebase/config';
 import { router } from 'expo-router';
 
+import 'stream-chat-react/dist/css/v2/index.css';
+import '@/global.css';
+
 const AppScreen = () => {
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
