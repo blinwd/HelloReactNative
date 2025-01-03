@@ -5,14 +5,15 @@ import {
   OverlayProvider,
   useCreateChatClient,
 } from 'stream-chat-expo';
+
 import {
   chatApiKey,
   chatUserToken,
   chatUserId,
   chatUserName,
-} from '@/stream-chat';
-import { useColorScheme } from '@/hooks/useColorScheme';
+} from '@/stream-chat/config';
 import Colors from '@/constants/Colors';
+import { useColorScheme } from '@/hooks/useColorScheme';
 
 type StreamChatWrapperProps = {
   children: React.ReactNode;

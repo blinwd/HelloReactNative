@@ -5,8 +5,8 @@ import {
   useEffect,
   useState,
 } from 'react';
+import { Platform } from 'react-native';
 import { Channel, StreamChat, Thread } from 'stream-chat';
-
 import { User } from 'firebase/auth';
 
 import { auth } from '@/firebase/config';
@@ -19,7 +19,6 @@ import {
   teamUuid,
 } from '@/stream-chat/config';
 import type { AppContextType } from './AppContextType';
-import { Platform } from 'react-native';
 
 const AppContext = createContext<AppContextType>({
   user: null,

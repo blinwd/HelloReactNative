@@ -6,7 +6,7 @@ import {
   MessageInput,
   Window,
 } from 'stream-chat-react';
-import { useAppContext } from '@/contexts';
+import { useAppContext } from '@/contexts/AppContext';
 
 const WebStreamChatChannel = () => {
   const { channel } = useAppContext();

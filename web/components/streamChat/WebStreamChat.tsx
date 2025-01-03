@@ -1,7 +1,9 @@
 'use dom';
 
 import 'stream-chat-react/dist/css/v2/index.css';
+
 import { Chat } from 'stream-chat-react';
+
 import { useAppContext } from '@/contexts';
 import { useColorScheme } from '@/hooks/useColorScheme';
 

@@ -1,6 +1,7 @@
 import { ChannelList } from 'stream-chat-expo';
 import { router } from 'expo-router';
-import { chatUserId } from '@/stream-chat';
+
+import { chatUserId } from '@/stream-chat/config';
 import { useAppContext } from '@/contexts/AppContext';
 
 const Chat = () => {

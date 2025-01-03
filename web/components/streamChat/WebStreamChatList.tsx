@@ -1,9 +1,9 @@
 'use dom';
 
 import { Avatar, ChannelList } from 'stream-chat-react';
-import { useAppContext } from '@/contexts/AppContext';
 
 import { chatUserId } from '@/stream-chat/config';
+import { useAppContext } from '@/contexts/AppContext';
 
 type WebStreamChatProps = {
   className?: string;

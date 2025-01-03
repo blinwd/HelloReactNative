@@ -2,12 +2,12 @@ import { Redirect, Tabs } from 'expo-router';
 import { Platform } from 'react-native';
 
 import Colors from '@/constants/Colors';
+import { useColorScheme } from '@/hooks/useColorScheme';
+import { useInitialRouteName } from '@/hooks/useInitialRouteName';
+import { useAppContext } from '@/contexts/AppContext';
 import TabBarBackground from '@/components/ui/TabBarBackground';
 import { HapticTab } from '@/components/HapticTab';
-import { useColorScheme } from '@/hooks/useColorScheme';
-import { useAppContext } from '@/contexts/AppContext';
 import IconSymbol from '@/components/IconSymbol';
-import { useInitialRouteName } from '@/hooks/useInitialRouteName';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
