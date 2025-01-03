@@ -10,9 +10,9 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 
 Use `main` branch for all the features. Alternatively, use any of the following branches to start up the app:
 
-- **hello-world**: The hello world setup showcasing the base Expo configuration.
-- **firebase**: Contains features and configurations specific to Firebase authentication.
-- **stream-chat**: Contains features and configurations specific to Stream Chat integration.
+- **[hello-world](https://github.com/blinwd/HelloReactNative/tree/hello-world)**: The hello world setup showcasing the base Expo configuration.
+- **[firebase](https://github.com/blinwd/HelloReactNative/tree/firebase)**: Contains features and configurations specific to Firebase authentication.
+- **[stream-chat](https://github.com/blinwd/HelloReactNative/tree/stream-chat)**: Contains features and configurations specific to Stream Chat integration.
 
 ## Running the App
 ### Web
@@ -37,7 +37,7 @@ npm run android
 The app includes the following routes:
 
 - **Home**: The default page generated from `create-expo-app`.
-- **Explore**: The fallback page. See `+not_found.tsx`.
+- **Explore**: For testing the fallback page. See `+not_found.tsx`.
 - **Chat**: Stream chat functionality. Follow the **Stream Chat Configuration** section for setup.
 
 
