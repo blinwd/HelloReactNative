@@ -31,7 +31,7 @@ const SignUpPage = ({ onSignInClick }: SignUpPageProps) => {
         isWeb ? 'h-full items-center justify-center' : ''
       }`}
     >
-      <View
+      <ThemedView
         className={`p-8 flex-col items-center ${
           isWeb
             ? 'gap-4 w-[360px] rounded-lg bg-white lg:border lg:border-gray-300'
@@ -141,7 +141,7 @@ const SignUpPage = ({ onSignInClick }: SignUpPageProps) => {
             </TouchableOpacity>
           )}
         </View>
-      </View>
+      </ThemedView>
     </ThemedView>
   );
 };

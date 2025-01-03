@@ -14,7 +14,11 @@ const StreamChatWrapper = ({
   children,
 }: StreamChatWrapperProps) => {
   const colorScheme = useColorScheme();
-  const { client } = useAppContext();
+  const { isAuthenticated, client } = useAppContext();
+
+  if (!isAuthenticated) {
+    return <>{children}</>;
+  }
 
   if (!client) {
     return (
