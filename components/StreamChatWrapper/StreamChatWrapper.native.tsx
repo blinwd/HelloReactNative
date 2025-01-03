@@ -1,19 +1,10 @@
 import { SafeAreaView, Text, View } from 'react-native';
 import tailwindColors from 'tailwindcss/colors';
-import {
-  Chat,
-  OverlayProvider,
-  useCreateChatClient,
-} from 'stream-chat-expo';
+import { Chat, OverlayProvider } from 'stream-chat-expo';
 
-import {
-  chatApiKey,
-  chatUserToken,
-  chatUserId,
-  chatUserName,
-} from '@/stream-chat/config';
 import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { useAppContext } from '@/contexts/AppContext';
 
 type StreamChatWrapperProps = {
   children: React.ReactNode;
@@ -23,21 +14,15 @@ const StreamChatWrapper = ({
   children,
 }: StreamChatWrapperProps) => {
   const colorScheme = useColorScheme();
-
-  const client = useCreateChatClient({
-    apiKey: chatApiKey as string,
-    userData: {
-      id: chatUserId as string,
-      name: chatUserName,
-    },
-    tokenOrProvider: chatUserToken as string,
-  });
+  const { client } = useAppContext();
 
   if (!client) {
     return (
       <SafeAreaView className="flex-1 bg-primary">
         <View className="flex-1 items-center justify-center">
-          <Text>Loading stream chat client ...</Text>
+          <Text className="dark:text-white">
+            Loading stream chat client ...
+          </Text>
         </View>
       </SafeAreaView>
     );
@@ -83,10 +68,18 @@ const StreamChatWrapper = ({
                   : tailwindColors.white,
             },
           },
+          emptyStateIndicator: {
+            messageContainer: {
+              backgroundColor:
+                colorScheme === 'dark'
+                  ? tailwindColors.zinc[800]
+                  : tailwindColors.white,
+            },
+          },
         },
       }}
     >
-      <Chat client={client}>{children}</Chat>
+      <Chat client={client as any}>{children}</Chat>
     </OverlayProvider>
   );
 };

@@ -5,7 +5,6 @@ import {
   useEffect,
   useState,
 } from 'react';
-import { Platform } from 'react-native';
 import { Channel, StreamChat, Thread } from 'stream-chat';
 import { User } from 'firebase/auth';
 
@@ -56,11 +55,7 @@ export const AppProvider = ({
   const [thread, setThread] = useState<Thread>();
 
   const connectStreamChat = useCallback(() => {
-    if (
-      Platform.OS !== 'web' ||
-      !chatApiKey ||
-      !chatUserToken
-    ) {
+    if (!chatApiKey || !chatUserToken) {
       return;
     }
 
