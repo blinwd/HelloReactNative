@@ -4,6 +4,7 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 
 <img width="1728" alt="Screenshot 2024-12-31 at 5 21 04 PM" src="https://github.com/user-attachments/assets/61dd0ca1-90aa-4485-8149-25be4c6270f4" />
 <img width="1728" alt="Screenshot 2024-12-31 at 5 19 00 PM" src="https://github.com/user-attachments/assets/825bf651-ed08-4c92-b395-6db359a05665" />
+<img width="1728" alt="Screenshot 2025-01-02 at 5 19 06 PM" src="https://github.com/user-attachments/assets/17ddcab3-3508-4122-ab33-44f6f9582001" />
 
 ## Branches
 
@@ -48,11 +49,11 @@ To enable chat functionality, follow these steps:
 
 ```dotenv
 # Stream Chat Configuration
-EXPO_PUBLIC_STREAM_CHAT_CHAT_API_KEY=<Your API Key from the Sparta client>
-EXPO_PUBLIC_STREAM_CHAT_CHAT_USER_TOKEN=<Your Token from the Sparta client>
+EXPO_PUBLIC_STREAM_CHAT_CHAT_API_KEY=< Your API Key from the Sparta client >
+EXPO_PUBLIC_STREAM_CHAT_CHAT_USER_TOKEN=< Your Token from the Sparta client >
 EXPO_PUBLIC_STREAM_CHAT_TEAM_TYPE=care-team
-EXPO_PUBLIC_STREAM_CHAT_TEAM_UUID=<Team UUID>
-EXPO_PUBLIC_STREAM_CHAT_CHAT_USER_ID=<Member UUID>
+EXPO_PUBLIC_STREAM_CHAT_TEAM_UUID=< Provide Team UUID >
+EXPO_PUBLIC_STREAM_CHAT_CHAT_USER_ID=< Provide Member UUID >
 EXPO_PUBLIC_STREAM_CHAT_CHAT_USER_NAME=Member
 ```
 
