@@ -3,7 +3,8 @@
  * https://docs.expo.dev/guides/color-schemes/
  */
 import { useColorScheme as useNativeColorScheme } from 'nativewind';
-import { Colors } from '@/constants/Colors';
+
+import Colors from '@/constants/Colors';
 
 export function useColorScheme(
   props?: { light?: string; dark?: string },

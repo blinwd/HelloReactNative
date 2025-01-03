@@ -5,8 +5,8 @@ import {
   useEffect,
   useState,
 } from 'react';
+import { Platform } from 'react-native';
 import { Channel, StreamChat, Thread } from 'stream-chat';
-
 import { User } from 'firebase/auth';
 
 import { auth } from '@/firebase/config';
@@ -15,10 +15,10 @@ import {
   chatUserId,
   chatUserName,
   chatUserToken,
+  teamType,
   teamUuid,
 } from '@/stream-chat/config';
 import type { AppContextType } from './AppContextType';
-import { Platform } from 'react-native';
 
 const AppContext = createContext<AppContextType>({
   user: null,
@@ -56,7 +56,11 @@ export const AppProvider = ({
   const [thread, setThread] = useState<Thread>();
 
   const connectStreamChat = useCallback(() => {
-    if (Platform.OS !== 'web') {
+    if (
+      Platform.OS !== 'web' ||
+      !chatApiKey ||
+      !chatUserToken
+    ) {
       return;
     }
 
@@ -65,17 +69,13 @@ export const AppProvider = ({
     newStreamChatClient
       .connectUser(
         {
-          id: chatUserId,
+          id: chatUserId as string,
           name: chatUserName,
         },
         chatUserToken
       )
       .then(() => {
         setClient(newStreamChatClient);
-
-        setChannel(
-          newStreamChatClient.channel('care-team', teamUuid)
-        );
       })
       .catch((err) => {
         console.error('>> connectStreamChat error:', err);
@@ -85,6 +85,23 @@ export const AppProvider = ({
       newStreamChatClient?.disconnectUser();
     };
   }, []);
+
+  useEffect(() => {
+    /**
+     * Dev note:
+     * team type and team uuid are hardcoded in the environment variables for now.
+     */
+    const initialWatchChannel = client?.channel(
+      teamType as string,
+      teamUuid
+    );
+
+    initialWatchChannel?.watch().then((result) => {
+      if (result.channel) {
+        setChannel(initialWatchChannel);
+      }
+    });
+  }, [client]);
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {

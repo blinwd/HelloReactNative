@@ -10,6 +10,7 @@
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "expo lint",
+    "prebuild": "expo prebuild --clean",
     "clean-install": "rm -rf node_modules && npm cache clean --force && npm install"
   },
   "jest": {

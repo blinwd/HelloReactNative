@@ -1,8 +1,11 @@
 'use dom';
 
 import 'stream-chat-react/dist/css/v2/index.css';
+
 import { Chat } from 'stream-chat-react';
+
 import { useAppContext } from '@/contexts';
+import { useColorScheme } from '@/hooks/useColorScheme';
 
 type WebStreamChatProps = {
   children: React.ReactNode;
@@ -14,6 +17,7 @@ const WebStreamChat = ({
   className = '',
 }: WebStreamChatProps) => {
   const { client } = useAppContext();
+  const colorScheme = useColorScheme();
 
   if (!client) {
     return (
@@ -25,7 +29,14 @@ const WebStreamChat = ({
     );
   }
 
-  return <Chat client={client}>{children}</Chat>;
+  return (
+    <Chat
+      client={client}
+      theme={`str-chat__theme-${colorScheme}`}
+    >
+      {children}
+    </Chat>
+  );
 };
 
 export default WebStreamChat;

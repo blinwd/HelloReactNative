@@ -9,10 +9,13 @@ const Chat = () => {
   return (
     <PageView topNavBar={<TopNavBar />}>
       <div
-        className={`w-full h-full flex flex-row gap-2 border-t border-gray-200`}
+        className={`w-full h-full flex flex-row border-t border-gray-200 dark:border-gray-700`}
       >
         <WebStreamChatList className="w-[56px]" />
-        <WebStreamChatChannel className="py-2" />
+
+        <div className="flex-1 h-full overflow-hidden ${className}">
+          <WebStreamChatChannel />
+        </div>
       </div>
     </PageView>
   );
