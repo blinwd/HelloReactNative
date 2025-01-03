@@ -4,7 +4,6 @@ import { Avatar, ChannelList } from 'stream-chat-react';
 import { useAppContext } from '@/contexts/AppContext';
 
 import { chatUserId } from '@/stream-chat/config';
-import { useEffect } from 'react';
 
 type WebStreamChatProps = {
   className?: string;
@@ -30,7 +29,7 @@ const WebStreamChatList = ({
       <ChannelList
         filters={{
           members: {
-            $in: [chatUserId],
+            $in: [chatUserId as string],
           },
         }}
         sort={{
