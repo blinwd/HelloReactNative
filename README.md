@@ -32,6 +32,32 @@ Start the app in an Android emulator or device:
 npm run android
 ```
 
+## Expo Routes
+The app includes the following routes:
+
+- **Home**: The default page generated from `create-expo-app`.
+- **Explore**: The fallback page. See `+not_found.tsx`.
+- **Chat**: Stream chat functionality. Follow the **Stream Chat Configuration** section for setup.
+
+
+## Stream Chat Configuration
+To enable chat functionality, follow these steps:
+
+1. Create a `.env.local` file in the root directory of your project.
+2. Add the following environment variables to the file:
+
+```dotenv
+# Stream Chat Configuration
+EXPO_PUBLIC_STREAM_CHAT_CHAT_API_KEY=<Your API Key from the Sparta client>
+EXPO_PUBLIC_STREAM_CHAT_CHAT_USER_TOKEN=<Your Token from the Sparta client>
+EXPO_PUBLIC_STREAM_CHAT_TEAM_TYPE=care-team
+EXPO_PUBLIC_STREAM_CHAT_TEAM_UUID=<Team UUID>
+EXPO_PUBLIC_STREAM_CHAT_CHAT_USER_ID=<Member UUID>
+EXPO_PUBLIC_STREAM_CHAT_CHAT_USER_NAME=Member
+```
+
+3. Save the file. Restart your local development server.
+
 ## References
 1. [Expo Documentation](https://docs.expo.dev/)
 2. [NativeWind Documentation](https://www.nativewind.dev/)
