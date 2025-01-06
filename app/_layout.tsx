@@ -17,6 +17,7 @@ import { AppProvider } from '@/contexts/AppContext';
 import { AuthProvider } from '@/contexts/AuthContext';
 import StreamChatWrapper from '@/components/StreamChatWrapper';
 
+import 'stream-chat-react/dist/css/v2/index.css';
 import '@/global.css';
 import '@/firebase/config';
 
@@ -44,54 +45,52 @@ export default function AppLayout() {
       style={[styles.gestureHandlerRootView]}
     >
       <AppProvider>
-        <AuthProvider>
-          <ThemeProvider
-            value={
-              colorScheme === 'dark'
-                ? DarkTheme
-                : DefaultTheme
-            }
-          >
-            <StreamChatWrapper>
-              <Stack>
-                <Stack.Screen
-                  name="(tabs)"
-                  options={{
-                    title: '',
-                    headerShown: false,
-                  }}
-                />
-                <Stack.Screen
-                  name="channel/[cid]"
-                  options={{
-                    headerShown: true,
-                  }}
-                />
-                <Stack.Screen
-                  name="+not-found"
-                  options={{
-                    title: 'Not Found',
-                    headerShown: false,
-                  }}
-                />
-                <Stack.Screen
-                  name="(auth)"
-                  options={{
-                    title: '',
-                    headerShown: false,
-                  }}
-                />
-                <Stack.Screen
-                  name="index"
-                  options={{
-                    headerShown: false,
-                  }}
-                />
-              </Stack>
-              <StatusBar style="auto" />
-            </StreamChatWrapper>
-          </ThemeProvider>
-        </AuthProvider>
+        <ThemeProvider
+          value={
+            colorScheme === 'dark'
+              ? DarkTheme
+              : DefaultTheme
+          }
+        >
+          <StreamChatWrapper>
+            <Stack>
+              <Stack.Screen
+                name="(tabs)"
+                options={{
+                  title: '',
+                  headerShown: false,
+                }}
+              />
+              <Stack.Screen
+                name="channel/[cid]"
+                options={{
+                  headerShown: true,
+                }}
+              />
+              <Stack.Screen
+                name="+not-found"
+                options={{
+                  title: 'Not Found',
+                  headerShown: false,
+                }}
+              />
+              <Stack.Screen
+                name="(auth)"
+                options={{
+                  title: '',
+                  headerShown: false,
+                }}
+              />
+              <Stack.Screen
+                name="index"
+                options={{
+                  headerShown: false,
+                }}
+              />
+            </Stack>
+            <StatusBar style="auto" />
+          </StreamChatWrapper>
+        </ThemeProvider>
       </AppProvider>
     </GestureHandlerRootView>
   );

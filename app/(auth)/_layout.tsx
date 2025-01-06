@@ -1,7 +1,7 @@
 import { router, Stack } from 'expo-router';
-import { useEffect } from 'react';
 import { Platform, TouchableOpacity } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
+import Colors from '@/constants/Colors';
 
 const AuthLayout = () => {
   return (
@@ -23,8 +23,8 @@ const AuthLayout = () => {
           headerRight: () => (
             <TouchableOpacity onPress={() => router.back()}>
               <ThemedText
-                className="text-blue-500"
-                style={{ fontWeight: 'semibold' }}
+                lightColor={Colors.light.blue}
+                darkColor={Colors.dark.blue}
               >
                 Cancel
               </ThemedText>

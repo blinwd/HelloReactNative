@@ -7,7 +7,8 @@
       "@firebase/auth": [
         "./node_modules/@firebase/auth/dist/index.rn.d.ts"
       ],
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@/stylos/*": ["./web/packages/stylos/*"]
     }
   },
   "include": [
@@ -15,6 +16,7 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts",
+    "declarations.d.ts",
     "nativewind-env.d.ts"
   ]
 }

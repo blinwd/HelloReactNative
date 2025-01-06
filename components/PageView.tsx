@@ -20,7 +20,7 @@ const PageView = ({
   ...otherProps
 }: PageViewProps) => {
   return (
-    <SafeAreaView className="flex-1">
+    <SafeAreaView className="flex-1 bg-white dark:bg-zinc-900">
       <View
         className={`flex-1 ${className}`}
         {...otherProps}

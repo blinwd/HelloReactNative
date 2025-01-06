@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { useAppContext } from '@/contexts/AppContext';
 import { WebStreamChat } from '@/web/components/streamChat';
