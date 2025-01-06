@@ -15,7 +15,27 @@ Use `main` branch for all the features. Alternatively, use any of the following 
 - **[stream-chat](https://github.com/blinwd/HelloReactNative/tree/stream-chat)**: Contains features and configurations specific to Stream Chat integration.
 - **[stylos](https://github.com/blinwd/HelloReactNative/tree/stylos)**: Contains DOM based account creation page and create profile page from [stylos](https://github.com/vidahealth/stylos) package.
 
+## Setup
+
+Install npm dependencies in the project root:
+
+```bash
+npm install
+```
+
 ## Running the App
+
+Run the following command to start the development server:
+
+```bash
+npx expo start
+```
+
+After running the above command:
+
+- To run the web app, press `w` in the terminal. It will open the web app in the default web browser.
+- To run on iOS simulator, press `i` in the terminal.
+- To run on Android emulator, press `a` in the terminal.
 
 ### Web
 
@@ -27,7 +47,7 @@ npm run web
 
 ### iOS
 
-Start the app in the iOS simulator (requires Xcode):
+To run the development build on an iOS simulator, run the following command:
 
 ```bash
 npm run ios
@@ -35,7 +55,7 @@ npm run ios
 
 ### Android
 
-Start the app in an Android emulator or device:
+To run the development build on an Android emulator or connected device:
 
 ```bash
 npm run android
