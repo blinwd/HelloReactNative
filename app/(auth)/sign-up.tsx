@@ -6,7 +6,7 @@ const SignUpScreen = () => {
   return (
     <AuthProvider key="sign-up">
       <SignUpPage
-        onSignInClick={() => router.replace('/sign-in')}
+        onSignInClick={() => router.push('/sign-in')}
       />
     </AuthProvider>
   );

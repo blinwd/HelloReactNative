@@ -16,6 +16,7 @@ const Colors = {
     tabIconDefault: tailwindColors['slate'][500],
     tabIconSelected: tintColorLight,
     divider: tailwindColors['gray'][200],
+    blue: tailwindColors['blue'][500],
   },
   dark: {
     text: '#ECEDEE',
@@ -25,6 +26,7 @@ const Colors = {
     tabIconDefault: '#9BA1A6',
     tabIconSelected: tintColorDark,
     divider: tailwindColors['gray'][700],
+    blue: tailwindColors['blue'][300],
   },
 };
 

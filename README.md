@@ -15,33 +15,41 @@ Use `main` branch for all the features. Alternatively, use any of the following 
 - **[stream-chat](https://github.com/blinwd/HelloReactNative/tree/stream-chat)**: Contains features and configurations specific to Stream Chat integration.
 
 ## Running the App
+
 ### Web
+
 Start the app in a web browser:
+
 ```bash
 npm run web
 ```
 
 ### iOS
+
 Start the app in the iOS simulator (requires Xcode):
+
 ```bash
 npm run ios
 ```
 
 ### Android
+
 Start the app in an Android emulator or device:
+
 ```bash
 npm run android
 ```
 
 ## Expo Routes
+
 The app includes the following routes:
 
 - **Home**: The default page generated from `create-expo-app`.
 - **Explore**: For testing the fallback page. See `+not_found.tsx`.
 - **Chat**: Stream chat functionality. Follow the **Stream Chat Configuration** section for setup.
 
-
 ## Stream Chat Configuration
+
 To enable chat functionality, follow these steps:
 
 1. Create a `.env.local` file in the root directory of your project.
@@ -60,7 +68,8 @@ EXPO_PUBLIC_STREAM_CHAT_CHAT_USER_NAME=Member
 3. Save the file. Restart your local development server.
 
 ## References
+
 1. [Expo Documentation](https://docs.expo.dev/)
 2. [NativeWind Documentation](https://www.nativewind.dev/)
-3. [Firebase Documentation](https://firebase.google.com/docs/)
+3. [Firebase Documentation](https://rnfirebase.io)
 4. [Stream Chat Documentation](https://getstream.io/chat/docs/)

@@ -17,6 +17,8 @@ import { AppProvider } from '@/contexts/AppContext';
 import { AuthProvider } from '@/contexts/AuthContext';
 import StreamChatWrapper from '@/components/StreamChatWrapper';
 
+import 'stream-chat-react/dist/css/v2/index.css';
+import '@/global.css';
 import '@/firebase/config';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
