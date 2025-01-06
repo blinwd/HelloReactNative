@@ -2,15 +2,17 @@ import {
   createContext,
   useCallback,
   useContext,
-  useState,
 } from 'react';
-import { auth } from '@/firebase/config';
+
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  User,
 } from 'firebase/auth';
 import { Href, router } from 'expo-router';
-import { useAppContext } from './AppContext';
+
+import { auth } from '@/firebase/config';
+import { Platform } from 'react-native';
 
 const AuthContext = createContext<{
   errors: Record<string, string | boolean>;
@@ -38,14 +40,24 @@ export const useAuthContext = () => {
 
 export const AuthProvider = ({
   children,
+  value,
 }: {
   children: React.ReactNode;
+  value: {
+    errors: Record<string, string | boolean>;
+    setUser: React.Dispatch<
+      React.SetStateAction<User | null | undefined>
+    >;
+    setIsAuthenticated: React.Dispatch<
+      React.SetStateAction<boolean>
+    >;
+    setErrors: React.Dispatch<
+      React.SetStateAction<Record<string, string | boolean>>
+    >;
+  };
 }) => {
-  const { setIsAuthenticated, setUser } = useAppContext();
-
-  const [errors, setErrors] = useState<
-    Record<string, string | boolean>
-  >({});
+  const { errors, setErrors, setIsAuthenticated, setUser } =
+    value;
 
   const signUp = useCallback(
     (
@@ -96,7 +108,9 @@ export const AuthProvider = ({
           setIsAuthenticated(true);
           setUser(userCredential.user);
 
-          router.push(redirectUrl);
+          if (Platform.OS === 'web') {
+            router.push(redirectUrl);
+          }
         })
         .catch((error) => {
           console.error(
@@ -119,7 +133,9 @@ export const AuthProvider = ({
         setIsAuthenticated(false);
         setUser(null);
 
-        router.push(redirectUrl || '/sign-in');
+        if (Platform.OS === 'web') {
+          router.push(redirectUrl || '/sign-in');
+        }
       } catch (error) {
         console.error('>> sign out error:', error);
       }

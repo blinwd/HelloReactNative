@@ -18,6 +18,7 @@ import {
   teamUuid,
 } from '@/stream-chat/config';
 import type { AppContextType } from './AppContextType';
+import { AuthProvider } from './AuthContext';
 
 const AppContext = createContext<AppContextType>({
   user: null,
@@ -26,11 +27,13 @@ const AppContext = createContext<AppContextType>({
   client: null,
   channel: null,
   thread: null,
+  errors: {},
   setUser: () => {},
   setIsAuthenticated: () => {},
   setClient: () => {},
   setChannel: () => {},
   setThread: () => {},
+  setErrors: () => {},
   connectStreamChat: () => {},
 });
 
@@ -54,8 +57,17 @@ export const AppProvider = ({
   const [channel, setChannel] = useState<Channel>();
   const [thread, setThread] = useState<Thread>();
 
+  const [errors, setErrors] = useState<
+    Record<string, string | boolean>
+  >({});
+
   const connectStreamChat = useCallback(() => {
     if (!chatApiKey || !chatUserToken) {
+      setErrors((prev) => ({
+        ...prev,
+        streamChat:
+          'Miss Stream Chat API key or token in environment variables.',
+      }));
       return;
     }
 
@@ -119,15 +131,26 @@ export const AppProvider = ({
         client,
         channel,
         thread,
+        errors,
         setUser,
         setIsAuthenticated,
         setClient,
         setChannel,
         setThread,
+        setErrors,
         connectStreamChat,
       }}
     >
-      {children}
+      <AuthProvider
+        value={{
+          errors,
+          setErrors,
+          setIsAuthenticated,
+          setUser,
+        }}
+      >
+        {children}
+      </AuthProvider>
     </AppContext.Provider>
   );
 };

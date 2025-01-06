@@ -24,3 +24,4 @@ export { default as designSystemTheme } from './theme';
 
 // Onboarding
 export * from './OnboardingAccountCreationPage';
+export * from './OnboardingCreateProfilePage'
