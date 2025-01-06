@@ -4,7 +4,6 @@ import {
   View,
   Alert,
 } from 'react-native';
-import tailwindColors from 'tailwindcss/colors';
 import { Chat, OverlayProvider } from 'stream-chat-expo';
 
 import Colors from '@/constants/Colors';
@@ -62,7 +61,7 @@ const StreamChatWrapper = ({
               color: Colors[colorScheme].text,
             },
             message: {
-              color: tailwindColors.slate[400],
+              color: Colors[colorScheme].gray,
             },
           },
           channelListMessenger: {
@@ -83,17 +82,13 @@ const StreamChatWrapper = ({
           messageList: {
             container: {
               backgroundColor:
-                colorScheme === 'dark'
-                  ? tailwindColors.zinc[800]
-                  : tailwindColors.white,
+                Colors[colorScheme].background,
             },
           },
           emptyStateIndicator: {
             messageContainer: {
               backgroundColor:
-                colorScheme === 'dark'
-                  ? tailwindColors.zinc[800]
-                  : tailwindColors.white,
+                Colors[colorScheme].background,
             },
           },
         },
