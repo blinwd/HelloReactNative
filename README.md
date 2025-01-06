@@ -23,7 +23,13 @@ Install npm dependencies in the project root:
 npm install
 ```
 
-## Running the App
+Next, you may want to run Prebuild to generate native directories (/ios and /android) before running the app on the simulator.
+
+```bash
+npm run prebuild
+```
+
+## Running the App with Expo Go
 
 Run the following command to start the development server:
 
@@ -47,7 +53,7 @@ npm run web
 
 ### iOS
 
-To run the development build on an iOS simulator, run the following command:
+To run the **development build** on an iOS simulator, run the following command:
 
 ```bash
 npm run ios
@@ -55,7 +61,7 @@ npm run ios
 
 ### Android
 
-To run the development build on an Android emulator or connected device:
+To run the **development build** on an Android emulator or connected device:
 
 ```bash
 npm run android
@@ -84,7 +90,7 @@ EXPO_PUBLIC_STREAM_CHAT_CHAT_USER_TOKEN=< Your Token from the Sparta client >
 EXPO_PUBLIC_STREAM_CHAT_TEAM_TYPE=care-team
 EXPO_PUBLIC_STREAM_CHAT_TEAM_UUID=< Provide Team UUID >
 EXPO_PUBLIC_STREAM_CHAT_CHAT_USER_ID=< Provide Member UUID >
-EXPO_PUBLIC_STREAM_CHAT_CHAT_USER_NAME=< Provide Member Name>
+EXPO_PUBLIC_STREAM_CHAT_CHAT_USER_NAME=< Provide Member Name >
 ```
 
 3. Save the file. Restart your local development server.
