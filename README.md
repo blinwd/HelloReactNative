@@ -80,7 +80,7 @@ The app includes the following routes:
 
 To enable chat functionality, follow these steps:
 
-1. Create a `.env.local` file in the root directory of your project.
+1. Create a `.env` file in the root directory of your project.
 2. Add the following environment variables to the file:
 
 ```dotenv

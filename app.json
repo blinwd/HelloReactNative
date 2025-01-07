@@ -4,7 +4,7 @@
     "slug": "HelloReactNative",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/vida-icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -17,7 +17,7 @@
     "android": {
       "googleServicesFile": "./firebase/google-services.json",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/adaptive-vida-icon.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.blinswd.HelloReactNative"

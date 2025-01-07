@@ -3,6 +3,10 @@
 # dependencies
 node_modules/
 
+# local env files
+.env
+.env*.local
+
 # Expo
 .expo/
 dist/
@@ -34,9 +38,6 @@ android/
 # macOS
 .DS_Store
 *.pem
-
-# local env files
-.env*.local
 
 # typescript
 *.tsbuildinfo
