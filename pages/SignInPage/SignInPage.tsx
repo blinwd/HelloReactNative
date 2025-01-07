@@ -44,12 +44,13 @@ const SignInPage = ({ onSignUpClick }: SignInPageProps) => {
         >
           {/* Logo */}
           <Image
-            className="mb-4"
             source={require('@/assets/images/vida-logo.svg')}
             style={[
               {
                 width: 120,
                 height: 120,
+                marginTop:
+                  Platform.OS === 'android' ? 96 : 48,
               },
             ]}
             contentFit="contain"

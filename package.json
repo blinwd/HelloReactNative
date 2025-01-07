@@ -12,7 +12,8 @@
     "lint": "expo lint",
     "prebuild": "expo prebuild --clean",
     "build:web": "expo export --source-maps -p web",
-    "build:ios": "npx expo prebuild --clean && npx expo run:ios",
+    "build:ios": "expo build:ios",
+    "eas-build:preview:android": "eas build --profile preview --platform android",
     "clean-install": "rm -rf node_modules && npm cache clean --force && npm install"
   },
   "jest": {
@@ -46,7 +47,7 @@
     "expo-build-properties": "~0.13.1",
     "expo-clipboard": "~7.0.0",
     "expo-constants": "~17.0.3",
-    "expo-dev-client": "~5.0.7",
+    "expo-dev-client": "~5.0.8",
     "expo-document-picker": "~13.0.1",
     "expo-font": "~13.0.2",
     "expo-haptics": "~14.0.0",
