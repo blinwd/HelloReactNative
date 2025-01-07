@@ -6,6 +6,8 @@
   "build": {
     "development": {
       "extends": "production",
+      "channel": "development",
+      "environment": "development",
       "developmentClient": true,
       "distribution": "internal",
       "ios": {
@@ -14,11 +16,14 @@
     },
     "preview": {
       "extends": "production",
+      "channel": "preview",
+      "environment": "preview",
       "distribution": "internal"
     },
     "production": {
       "autoIncrement": true,
-      "node": "18.18.0"
+      "node": "18.18.0",
+      "channel": "production"
     }
   },
   "submit": {
