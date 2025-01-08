@@ -12,7 +12,8 @@
     "lint": "expo lint",
     "prebuild": "expo prebuild --clean",
     "build:web": "expo export --source-maps -p web",
-    "build:ios": "npx expo prebuild --clean && npx expo run:ios",
+    "build:ios": "expo build:ios",
+    "eas-build:preview:android": "eas build --profile preview --platform android",
     "clean-install": "rm -rf node_modules && npm cache clean --force && npm install"
   },
   "jest": {
@@ -46,7 +47,7 @@
     "expo-build-properties": "~0.13.1",
     "expo-clipboard": "~7.0.0",
     "expo-constants": "~17.0.3",
-    "expo-dev-client": "~5.0.7",
+    "expo-dev-client": "~5.0.8",
     "expo-document-picker": "~13.0.1",
     "expo-font": "~13.0.2",
     "expo-haptics": "~14.0.0",
@@ -83,7 +84,8 @@
     "stream-chat-expo": "^6.1.0",
     "stream-chat-react": "^10.22.3",
     "tailwindcss": "^3.4.17",
-    "yup": "^1.6.1"
+    "yup": "^1.6.1",
+    "expo-updates": "~0.26.10"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -96,6 +98,32 @@
     "jest-expo": "~52.0.2",
     "react-test-renderer": "18.3.1",
     "typescript": "^5.3.3"
+  },
+  "expo": {
+    "doctor": {
+      "reactNativeDirectoryCheck": {
+        "exclude": [
+          "@emotion/react",
+          "@emotion/styled",
+          "@mui/material",
+          "@mui/icons-material",
+          "@mui/x-data-grid",
+          "@mui/x-date-pickers",
+          "@transifex/react",
+          "classnames",
+          "firebase",
+          "yup",
+          "formik",
+          "lodash",
+          "stream-chat",
+          "stream-chat-react",
+          "@stream-io/flat-list-mvcp",
+          "react-native-fs",
+          "react-native-quick-sqlite"
+        ],
+        "listUnknownPackages": false
+      }
+    }
   },
   "private": true
 }
