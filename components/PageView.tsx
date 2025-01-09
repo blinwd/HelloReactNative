@@ -1,9 +1,6 @@
 import type { ReactElement } from 'react';
-import {
-  SafeAreaView,
-  View,
-  ViewProps,
-} from 'react-native';
+import { View, ViewProps } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Platform } from 'react-native';
 
 type PageViewProps = ViewProps & {

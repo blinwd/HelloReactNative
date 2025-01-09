@@ -20,16 +20,21 @@ const AuthLayout = () => {
           title: '',
           presentation: 'modal',
           headerShadowVisible: false,
-          headerRight: () => (
-            <TouchableOpacity onPress={() => router.back()}>
-              <ThemedText
-                lightColor={Colors.light.blue}
-                darkColor={Colors.dark.blue}
-              >
-                Cancel
-              </ThemedText>
-            </TouchableOpacity>
-          ),
+          headerRight:
+            Platform.OS === 'ios'
+              ? () => (
+                  <TouchableOpacity
+                    onPress={() => router.back()}
+                  >
+                    <ThemedText
+                      lightColor={Colors.light.blue}
+                      darkColor={Colors.dark.blue}
+                    >
+                      Cancel
+                    </ThemedText>
+                  </TouchableOpacity>
+                )
+              : undefined,
         }}
       />
     </Stack>

@@ -1,11 +1,10 @@
-import { Platform, Alert } from 'react-native';
+import { useEffect } from 'react';
+import { Platform, Alert, View } from 'react-native';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
-import PageView from '@/components/PageView';
 import Onboarding from '@/web/pages/onboarding';
 import { useAuthContext } from '@/contexts/AuthContext';
 import { useAppContext } from '@/contexts/AppContext';
-import { useEffect } from 'react';
 
 const SignUpScreen = () => {
   const colorScheme = useColorScheme();
@@ -19,7 +18,7 @@ const SignUpScreen = () => {
   }, [errors]);
 
   return (
-    <PageView>
+    <View className="flex-1 bg-white overflow-y-auto">
       <Onboarding
         error={errors?.signUp as string}
         colorScheme={colorScheme}
@@ -35,7 +34,7 @@ const SignUpScreen = () => {
           signUp(email, password, '/');
         }}
       />
-    </PageView>
+    </View>
   );
 };
 
