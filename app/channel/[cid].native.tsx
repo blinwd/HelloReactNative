@@ -1,7 +1,8 @@
-import PageView from '@/components/PageView';
-import { useAppContext } from '@/contexts';
+import { useEffect } from 'react';
+import { Text } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Stack } from 'expo-router';
-import { Text, SafeAreaView } from 'react-native';
+
 import {
   Channel,
   MessageList,
@@ -9,7 +10,9 @@ import {
   useAttachmentPickerContext,
 } from 'stream-chat-expo';
 import { useHeaderHeight } from '@react-navigation/elements';
-import { useEffect } from 'react';
+
+import { useAppContext } from '@/contexts';
+import PageView from '@/components/PageView';
 
 const ChannelScreen = () => {
   const { channel } = useAppContext();

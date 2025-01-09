@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { useAppContext } from '@/contexts/AppContext';
 import { WebStreamChat } from '@/web/components/streamChat';
 
 type StreamChatWrapperProps = {
@@ -10,12 +9,6 @@ type StreamChatWrapperProps = {
 const StreamChatWrapper = ({
   children,
 }: StreamChatWrapperProps) => {
-  const { isAuthenticated } = useAppContext();
-
-  if (!isAuthenticated) {
-    return <>{children}</>;
-  }
-
   return <WebStreamChat>{children}</WebStreamChat>;
 };
 

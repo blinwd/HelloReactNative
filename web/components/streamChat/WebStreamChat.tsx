@@ -14,8 +14,12 @@ const WebStreamChat = ({
   children,
   className = '',
 }: WebStreamChatProps) => {
-  const { client } = useAppContext();
+  const { client, isAuthenticated } = useAppContext();
   const colorScheme = useColorScheme();
+
+  if (!isAuthenticated) {
+    return <>{children}</>;
+  }
 
   if (!client) {
     return (

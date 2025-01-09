@@ -1,5 +1,7 @@
+import { Text } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
 import { useAppContext } from '@/contexts';
-import { Text, SafeAreaView } from 'react-native';
 
 const ChannelScreen = ({
   children,
