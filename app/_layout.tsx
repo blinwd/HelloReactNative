@@ -14,7 +14,6 @@ import { useEffect } from 'react';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { AppProvider } from '@/contexts/AppContext';
-import { AuthProvider } from '@/contexts/AuthContext';
 import StreamChatWrapper from '@/components/StreamChatWrapper';
 
 import 'stream-chat-react/dist/css/v2/index.css';
@@ -65,6 +64,12 @@ export default function AppLayout() {
                 name="channel/[cid]"
                 options={{
                   headerShown: true,
+                }}
+              />
+              <Stack.Screen
+                name="(onboarding)"
+                options={{
+                  headerShown: false,
                 }}
               />
               <Stack.Screen

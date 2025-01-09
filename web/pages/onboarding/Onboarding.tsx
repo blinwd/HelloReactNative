@@ -18,15 +18,29 @@ type OnboardingProps = {
   error?: string;
   colorScheme?: 'light' | 'dark';
   platformOS?: Platform['OS'];
+  initScreen?: string;
+  onCalendarClick?: (
+    calendar:
+      | 'Apple'
+      | 'Google'
+      | 'iCal'
+      | 'Microsoft365'
+      | 'MicrosoftTeams'
+      | 'Outlook.com'
+      | 'Yahoo'
+      | undefined
+  ) => void;
   onContinueClick?: (formData: any) => void;
+  onBack?: () => void;
 };
 
-const Onboarding = ({
+const Onboarding: React.FC<OnboardingProps> = ({
   error,
   colorScheme,
   platformOS = 'web',
+  initScreen,
   onContinueClick,
-}: OnboardingProps) => {
+}) => {
   const formikRef = useRef<any>(null);
 
   const darkTheme = createTheme({
@@ -37,7 +51,9 @@ const Onboarding = ({
   });
 
   const [data, setData] = useState({});
-  const [screen, setScreen] = useState('accountCreation');
+  const [screen, setScreen] = useState(
+    initScreen || 'accountCreation'
+  );
 
   useEffect(() => {
     if (error && formikRef.current) {

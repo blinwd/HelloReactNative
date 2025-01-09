@@ -2,21 +2,22 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true,
-    "jsx": "react-jsxdev",
+    "jsx": "react-jsx",
+    "baseUrl": ".",
     "paths": {
       "@firebase/auth": [
         "./node_modules/@firebase/auth/dist/index.rn.d.ts"
       ],
-      "@/*": ["./*"],
-      "@/stylos/*": ["./web/packages/stylos/*"]
+      "@/stylos/*": ["./web/packages/stylos/*"],
+      "@/*": ["./*"]
     }
   },
+  "exclude": ["node_modules", "dist", "ios", "android"],
   "include": [
     "**/*.ts",
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts",
-    "declarations.d.ts",
     "nativewind-env.d.ts"
   ]
 }

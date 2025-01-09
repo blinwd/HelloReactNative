@@ -15,6 +15,7 @@ import { useAppContext } from '@/contexts/AppContext';
 import { useAuthContext } from '@/contexts/AuthContext';
 import PageView from '@/components/PageView';
 import TopNavBar from '@/templates/TopNavBar';
+import { Link } from 'expo-router';
 
 export default function HomeScreen() {
   const { isAuthenticated } = useAppContext();
@@ -207,6 +208,17 @@ export default function HomeScreen() {
             ),
           })}
         </Collapsible>
+
+        <Collapsible title="Demo Links">
+          <ThemedView style={styles.stepContainer}>
+            <Link href="/provider-matching-success-page">
+              <ThemedText type="link">
+                Onboarding Provider Matching Success page
+              </ThemedText>
+            </Link>
+          </ThemedView>
+        </Collapsible>
+
         {Platform.OS !== 'web' ? (
           <>
             {isAuthenticated ? (
