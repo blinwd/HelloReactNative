@@ -5,6 +5,8 @@ import { Chat } from 'stream-chat-react';
 import { useAppContext } from '@/contexts';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
+import 'stream-chat-react/dist/css/v2/index.css';
+
 type WebStreamChatProps = {
   children: React.ReactNode;
   className?: string;

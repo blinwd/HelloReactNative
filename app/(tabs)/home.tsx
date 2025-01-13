@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   Text,
 } from 'react-native';
+import { Link } from 'expo-router';
 import { ExternalLink } from '@/components/ExternalLink';
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
@@ -15,7 +16,6 @@ import { useAppContext } from '@/contexts/AppContext';
 import { useAuthContext } from '@/contexts/AuthContext';
 import PageView from '@/components/PageView';
 import TopNavBar from '@/templates/TopNavBar';
-import { Link } from 'expo-router';
 
 export default function HomeScreen() {
   const { isAuthenticated } = useAppContext();
@@ -211,9 +211,14 @@ export default function HomeScreen() {
 
         <Collapsible title="Demo Links">
           <ThemedView style={styles.stepContainer}>
-            <Link href="/provider-matching-success-page">
+            <Link href="/onboarding/provider-matching-success-page">
               <ThemedText type="link">
                 Onboarding Provider Matching Success page
+              </ThemedText>
+            </Link>
+            <Link href="/onboarding/tavus">
+              <ThemedText type="link">
+                Tavus demo page
               </ThemedText>
             </Link>
           </ThemedView>

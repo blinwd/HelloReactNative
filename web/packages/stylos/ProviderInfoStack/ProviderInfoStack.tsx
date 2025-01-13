@@ -67,6 +67,9 @@ const ProviderInfoStack: React.FC<
         fontSize: 18,
         lineHeight: '22px',
         whiteSpace: 'normal',
+        sx: {
+          color: 'text.primary',
+        },
       }}
       secondary={subtitle as string}
       secondaryTypographyProps={{

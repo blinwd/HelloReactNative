@@ -10,6 +10,8 @@ export const Mappings = {
   'chevron.right': 'chevron-right',
   'play.rectangle.fill': 'smart-display',
   'message.fill': 'message',
+  'speaker.wave.2': 'volume-up',
+  'speaker.slash': 'volume-off',
 } as Partial<
   Record<
     import('expo-symbols').SymbolViewProps['name'],

@@ -6,17 +6,20 @@ import {
   ThemeProvider,
 } from '@react-navigation/native';
 import * as SplashScreen from 'expo-splash-screen';
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
+import {
+  SafeAreaProvider,
+  initialWindowMetrics,
+} from 'react-native-safe-area-context';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { AppProvider } from '@/contexts/AppContext';
 import StreamChatWrapper from '@/components/StreamChatWrapper';
 
-import 'stream-chat-react/dist/css/v2/index.css';
 import '@/global.css';
 import '@/firebase/config';
 
@@ -44,58 +47,81 @@ export default function AppLayout() {
       style={[styles.gestureHandlerRootView]}
     >
       <AppProvider>
-        <ThemeProvider
-          value={
-            colorScheme === 'dark'
-              ? DarkTheme
-              : DefaultTheme
-          }
+        <SafeAreaProvider
+          initialMetrics={initialWindowMetrics}
         >
-          <StreamChatWrapper>
-            <Stack>
-              <Stack.Screen
-                name="(tabs)"
-                options={{
-                  title: '',
-                  headerShown: false,
-                }}
-              />
-              <Stack.Screen
-                name="channel/[cid]"
-                options={{
-                  headerShown: true,
-                }}
-              />
-              <Stack.Screen
-                name="(onboarding)"
-                options={{
-                  headerShown: false,
-                }}
-              />
-              <Stack.Screen
-                name="+not-found"
-                options={{
-                  title: 'Not Found',
-                  headerShown: false,
-                }}
-              />
-              <Stack.Screen
-                name="(auth)"
-                options={{
-                  title: '',
-                  headerShown: false,
-                }}
-              />
-              <Stack.Screen
-                name="index"
-                options={{
-                  headerShown: false,
-                }}
-              />
-            </Stack>
-            <StatusBar style="auto" />
-          </StreamChatWrapper>
-        </ThemeProvider>
+          <ThemeProvider
+            value={
+              colorScheme === 'dark'
+                ? DarkTheme
+                : DefaultTheme
+            }
+          >
+            <StreamChatWrapper>
+              <Stack>
+                <Stack.Screen
+                  name="(tabs)"
+                  options={{
+                    title: '',
+                    headerShown: false,
+                  }}
+                />
+                <Stack.Screen
+                  name="channel/[cid]"
+                  options={{
+                    headerShown: true,
+                  }}
+                />
+                <Stack.Screen
+                  name="onboarding/provider-matching-success-page"
+                  options={{
+                    title: '',
+                    headerShown: Platform.OS !== 'web',
+                  }}
+                />
+                <Stack.Screen
+                  name="onboarding/tavus"
+                  options={{
+                    title: 'Tavus Demo',
+                    headerShown: true,
+                    headerLargeTitle: Platform.OS === 'ios',
+                    headerShadowVisible:
+                      Platform.OS === 'ios'
+                        ? false
+                        : undefined,
+                    headerBlurEffect:
+                      Platform.OS === 'ios'
+                        ? 'regular'
+                        : undefined,
+                    headerTransparent:
+                      Platform.OS === 'ios',
+                  }}
+                />
+                <Stack.Screen
+                  name="+not-found"
+                  options={{
+                    title: 'Not Found',
+                    headerShown: false,
+                  }}
+                />
+                <Stack.Screen
+                  name="(auth)"
+                  options={{
+                    title: '',
+                    headerShown: false,
+                  }}
+                />
+                <Stack.Screen
+                  name="index"
+                  options={{
+                    headerShown: false,
+                  }}
+                />
+              </Stack>
+              <StatusBar style="auto" />
+            </StreamChatWrapper>
+          </ThemeProvider>
+        </SafeAreaProvider>
       </AppProvider>
     </GestureHandlerRootView>
   );

@@ -96,6 +96,9 @@ const OnboardingProviderMatchingSuccessPage: React.FC<
         platformOS={platformOS}
         pageFooterProps={pageFooterProps}
         calendarOptions={calendarOptions}
+        sx={{
+          bgcolor: 'background.default',
+        }}
         onCalendarClick={handleCalendarClick}
         onContinue={onContinue}
         onBack={onBack}
