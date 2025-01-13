@@ -23,7 +23,10 @@ export const AboutCoach: React.FC<AboutCoachProps> = ({
   return (
     <Card
       sx={{
-        bgcolor: (theme) => theme.palette.grey[100],
+        bgcolor: (theme) =>
+          theme.palette.mode === 'dark'
+            ? theme.palette.grey[900]
+            : theme.palette.grey[100],
         borderRadius: 4,
         border: 0,
       }}
